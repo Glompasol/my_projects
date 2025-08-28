@@ -16,14 +16,24 @@
     <h5>Heading 5</h5>
     <h6>Heading 6</h6>
     <p>This is a paragraph.</p>    
-    <a href="https://www.google.com" target="_blank">This is a link to google</a>
-    <button onclick="prompt('What is your name?')">This is a button</button>
+    <a href="cookie clicker.html" target="_self">This is a link to Cookie Clicker</a>
+    <button onclick="trout_question()">Opinion Button</button>
     <img src="Images/trout.png" height="250" alt="Trout" title="Trout">
     <h2>Trouts are cool because:</h2>
     <ol>
         <li>They taste good</li>
         <li>They are chill af</li>
         <li>They are lowkey kinda nonchalant</li>
+        <li id="user_input">What do you think?</li>
     </ol>
 </body>
+<script>
+    //Her er all koden
+    function trout_question()
+    {
+        let answer = prompt("What do you think about trouts?")
+        document.getElementById("user_input").innerText = answer
+    }
+    
+</script>
 </html>
