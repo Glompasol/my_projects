@@ -43,3 +43,7 @@ li {
     font-size: 18px;
     font-family: verdana;
 }
+img {
+    display: block;
+    margin-left: 0;
+}

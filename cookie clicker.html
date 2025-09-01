@@ -11,7 +11,8 @@
         <img src="Images/cookie.png" height="250" alt="Cookie" title="Cookie">
     </button>
     <p style="font-size: large;" id="text">0</p>
-    <button onclick="buy()">Price:<p id="upgrades">10</p></button>
+    <button onclick="buy()">Per second upgrade:<p id="upgrades">10</p></button>
+    <button onclick="buy_cursor()">Click upgrade:<p id="cursor_upgrades">10</p></button>
     <br>
     <a href="index.html" target="_self">This is a link to the main page</a>
     </center>
@@ -22,19 +23,34 @@
     let clickupgrade = 1
     let upgrade = 0
     let price = 10
+    let c_price = 10
     function countclick()
     {
         clicks += clickupgrade
-        clickupgrade += 0.1
     }
     function buy()  
     {
         if (clicks >= price)
         {
-            upgrade += 0.001
-            upgrade *= 2
+            if (upgrade == 0)
+        {
+            upgrade = 0.001
+        }
+            else
+        {
+            upgrade *= 1.5
+        }
             clicks -= price
             price *= 1.5
+        }
+    }
+        function buy_cursor()  
+    {
+        if (clicks >= c_price)
+        {
+            clickupgrade *= 1.5
+            clicks -= price
+            c_price *= 1.5
         }
     }
     function update()
@@ -42,6 +58,7 @@
         clicks += upgrade
         document.getElementById("text").innerText = Math.trunc(clicks)
         document.getElementById("upgrades").innerText = Math.trunc(price)
+        document.getElementById("cursor_upgrades").innerText = Math.trunc(c_price)
     }
     setInterval(update, 1)
 </script>
