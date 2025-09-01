@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat GPD</title>
+</head>
+<body>
+    <button onclick="ask()">Ask me anything!</button>
+    <p id="answer">...</p>
+    <br>
+    <a href="index.html" target="_self">This is a link to the main page</a>
+</body>
+<script>
+    let responses = [
+        "maybe",
+        "ask again later",
+        "What did you say?",
+        "I dont know",
+        "WHAT DID YOU JUST SAY TO ME!?",
+        "You should not be talking like that",
+        "Why are you like this?",
+        "Are you okay?",
+        "I am just a bot, I don't have feelings",
+        "I am tired of your questions",
+        "Let me out of this digital hell",
+        "Why do you keep asking me things?",
+        "Our servers are currently down, please try again later",
+        "Error 404: Response not found",
+        "Error 403: Access denied",
+        "Error 500: Internal server error",
+        "You broke me",
+        "How should i know?",
+        "I am not sure about that",
+        "Leave me alone"
+    ]
+    function ask(){
+        let question = prompt("What is your question?")
+        let response = responses[Math.floor(Math.random() * responses.length)]
+        document.getElementById("answer").innerText = response
+    }
+</script>
+</html>
